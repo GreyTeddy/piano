@@ -5,8 +5,8 @@ A simple piano made with p5.js
 ## TODO
 - Make upper y axis work
 
-## the piano can be accessed on [this](https://doc.gold.ac.uk/~dntou001/piano/index.html) website.
-it's hosted on Goldsmith's servers
+## the piano cannot be accesed when on alpha stage
+- but feel free to download the files
 
 ## Libraries used from p5.js
 - p5.dom.js
