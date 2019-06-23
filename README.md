@@ -16,4 +16,6 @@ it's hosted on Goldsmith's servers
 - square
 - sawtooth
 
+## check out the alpha branch 
+you can check out the alpha branch and maybe continue the coding with me.
 
