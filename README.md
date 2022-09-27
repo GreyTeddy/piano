@@ -2,8 +2,7 @@
 
 A simple piano made with p5.js
 
-## the piano can be accessed on [this](https://doc.gold.ac.uk/~dntou001/piano/index.html) website.
-it's hosted on Goldsmith's servers
+## the piano can be accessed [here](https://doc.gold.ac.uk/~dntou001/piano/index.html).
 
 ## Libraries used from p5.js
 - p5.dom.js
