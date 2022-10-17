@@ -2,7 +2,7 @@
 
 A simple piano made with p5.js
 
-## the piano can be accessed [here](https://doc.gold.ac.uk/~dntou001/piano/index.html).
+## the piano can be accessed [here](https://greyteddy.github.io/piano/).
 
 ## Libraries used from p5.js
 - p5.dom.js
