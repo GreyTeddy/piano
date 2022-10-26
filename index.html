@@ -2,52 +2,107 @@
 <html>
   <head>
     <script src="p5.min.js"></script>
-    <script src="main.js"></script>
     <script src="p5.sound.js"></script>
-    <script src="p5.dom.js"></script>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <style>
-      body {
-        padding: 0;
-        margin: 0;
-        width: 100%;
-      }
-      #piano {
-        margin: 0;
-        padding: 0;
-      }
-      canvas {
-        user-select: none;
-      }
-      .setting-div * {
-        display: inline-block;
-        margin: 0;
-      }
-    </style>
+    <script src="main.js"></script>
+    <meta
+      name="viewport"
+      content="width=device-width, minimum-scale=1.0, maximum-scale = 1.0, user-scalable = no"
+    />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div id="piano"></div>
-    <div class="setting-div" id="amplitude-div">
-      <p id="amplitude-text">Amplitude:</p>
-      <input
-        type="range"
-        min="1"
-        max="100"
-        value="50"
-        class="slider"
-        id="myRange"
-        onchange="setAmplitude(this)"
-      />
-      <p id="amplitude-value">50</p>
+    <div id="settings-out-container">
+      <div id="settings">
+        <div class="setting-div" id="transpose-div">
+          <p id="size-text">Transpose:</p>
+          <button onmousedown="setTranspose(this,'decrease-12')">-12</button>
+          <button onmousedown="setTranspose(this,'decrease')">-</button>
+          <p id="transpose-value">0</p>
+          <button onmousedown="setTranspose(this,'increase')">+</button>
+          <button onmousedown="setTranspose(this,'increase-12')">+12</button>
+        </div>
+        <div class="setting-div" id="size-div">
+          <p id="size-text">Size:</p>
+          <input
+            type="range"
+            min="1"
+            max="6"
+            value="2"
+            class="slider"
+            id="myRange"
+            oninput="setSize(this)"
+          />
+          <p id="amplitude-value">2</p>
+        </div>
+      </div>
+      <div id="sound-settings">
+        <div class="setting-div" id="amplitude-div">
+          <p id="amplitude-text">Amplitude:</p>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="50"
+            class="slider"
+            id="myRange"
+            oninput="setAmplitude(this)"
+          />
+          <p id="amplitude-value">50</p>
+        </div>
+        <div class="setting-div" id="amplitude-div">
+          <p id="amplitude-text">Attack Time:</p>
+          <input
+            type="range"
+            min="1"
+            max="100"
+            value="50"
+            class="slider"
+            id="myRange"
+            oninput="setAmplitude(this)"
+          />
+          <p id="amplitude-value">50</p>
+        </div>
+        <div class="setting-div" id="decay-time-div">
+          <p id="decay-time-text">Decay Time:</p>
+          <input
+            type="number"
+            min="0.01"
+            max="5"
+            value="0.1"
+            step="0.1"
+            id="myRange"
+            oninput="setDecayTime(this)"
+          />
+        </div>
+        <div class="setting-div" id="attack-time-div">
+          <p id="attack-time-text">Attack Time:</p>
+          <input
+            type="number"
+            min="0.01"
+            max="5"
+            value="0.01"
+            step="0.1"
+            id="myRange"
+            oninput="setAttackTime(this)"
+          />
+        </div>
+        <div class="setting-div" id="wave-div">
+          <p id="wave-text">Wave:</p>
+          <select id="set-wave" onchange="setWave(this)">
+            <option value="sine">sine</option>
+            <option value="triangle">triangle</option>
+            <option value="square">square</option>
+            <option value="sawtooth">sawtooth</option>
+          </select>
+          <p id="touch-detection-text">♪</p>
+        </div>
+      </div>
     </div>
-    <div class="setting-div" id="wave-div">
-      <p id="wave-text">Wave:</p>
-      <select id="set-wave" onchange="setWave(this)">
-        <option value="sine">sine</option>
-        <option value="triangle">triangle</option>
-        <option value="square">square</option>
-        <option value="sawtooth">sawtooth</option>
-      </select>
-    </div>
+    <button id="settings-out-button" onclick="showHideSettings(this)">
+      Settings
+    </button>
+    <p>Little Cute Piano</p>
+    <button id="on-off-button" onclick="turnOnOff(this)">Off</button>
   </body>
 </html>
